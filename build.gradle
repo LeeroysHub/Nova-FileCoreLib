@@ -18,7 +18,7 @@ allprojects {
 }
 
 android {
-    namespace = 'com.archos.filecorelibrary'
+    namespace = 'org.leeroy.filecorelibrary'
     compileSdk = 36
     sourceSets {
         main {
