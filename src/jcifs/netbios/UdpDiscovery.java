@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@ package jcifs.netbios;
 
 import android.os.SystemClock;
 
-import com.archos.filecorelibrary.jcifs.JcifsUtils;
-import com.archos.filecorelibrary.samba.InternalDiscovery;
-import com.archos.filecorelibrary.samba.InternalDiscoveryListener;
-import com.archos.filecorelibrary.samba.SambaDiscovery;
-import com.archos.filecorelibrary.samba.Workgroup;
+import org.leeroy.filecorelibrary.jcifs.JcifsUtils;
+import org.leeroy.filecorelibrary.samba.InternalDiscovery;
+import org.leeroy.filecorelibrary.samba.InternalDiscoveryListener;
+import org.leeroy.filecorelibrary.samba.SambaDiscovery;
+import org.leeroy.filecorelibrary.samba.Workgroup;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
