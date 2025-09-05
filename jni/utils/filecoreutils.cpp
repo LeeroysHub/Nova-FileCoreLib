@@ -44,7 +44,7 @@ jint JNI_OnLoad(JavaVM* vm, void* reserved) {
     }
 
     
-    jniRegisterNativeMethods(jenv, "com/archos/filecorelibrary/ArchosFileChannel",
+    jniRegisterNativeMethods(jenv, "org/leeroy/filecorelibrary/LeeroyFlixFileChannel",
             sMethods, NELEM(sMethods));
 
     return JNI_VERSION_1_4;
