@@ -19,8 +19,8 @@
     <string name="file_info_one_file">1 file</string>
     <string name="file_info_files">files</string>
     <string name="usbhost_ptp_storage">External camera</string>
-    <string name="network_media_servers">Media servers (UPnP)</string>
-    <string name="network_shared_folders">Shared folders (SMB)</string>
+    <string name="network_media_servers">DLNA servers</string>
+    <string name="network_shared_folders">SMB folders</string>
 
     <!-- LeeroyFlix file manager core -->
 
