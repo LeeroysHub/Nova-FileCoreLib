@@ -21,7 +21,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Workgroup implements Parcelable {
-    static public final String NOGROUP = "nogroup";
+    static public final String NOGROUP = "Not in a Workgroup";
 
     private final String mName;
 
