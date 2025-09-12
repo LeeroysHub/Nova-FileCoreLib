@@ -1,3 +1,7 @@
+// We have a full linux build, or we can use Android studio in Windows if we have all the libs built.
+def osName = System.getProperty("os.name")?.toLowerCase() ?: ""
+def isLinux = osName.contains("linux")
+
 apply plugin: 'com.android.library'
 
 repositories {
@@ -12,8 +16,10 @@ allprojects {
         tasks.withType(JavaCompile).configureEach {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
-        // to generate the required jar dependencies e.g. cling seamless
-        preBuild.dependsOn(ndkBuild)
+        if (isLinux) {
+            // to generate the required jar dependencies e.g. cling seamless
+            preBuild.dependsOn(ndkBuild)
+        }
     }
 }
 
@@ -41,10 +47,12 @@ android {
         multiDexEnabled = true
     }
 
-    tasks.withType(JavaCompile).configureEach {
-        compileTask -> compileTask.dependsOn ndkBuild
+    if (isLinux) {
+        tasks.withType(JavaCompile).configureEach {
+            compileTask -> compileTask.dependsOn ndkBuild
+        }
+        clean.dependsOn 'ndkClean'
     }
-    clean.dependsOn 'ndkClean'
 
     buildTypes {
         release {
@@ -69,32 +77,34 @@ android {
     }
 }
 
-tasks.register('ndkBuild', Exec) {
-    workingDir = "../"
+if (isLinux) {
+    tasks.register('ndkBuild', Exec) {
+        workingDir = "../"
 
-    outputs.upToDateWhen {
-        file("libs/arm64-v8a/libc++_shared.so").exists()
-        file("libs/armeabi-v7a/libc++_shared.so").exists()
-        file("libs/x86/libc++_shared.so").exists()
-        file("libs/x86_64/libc++_shared.so").exists()
-        //file("libs/jcifs-ng.jar").exists()
+        outputs.upToDateWhen {
+            file("libs/arm64-v8a/libc++_shared.so").exists()
+            file("libs/armeabi-v7a/libc++_shared.so").exists()
+            file("libs/x86/libc++_shared.so").exists()
+            file("libs/x86_64/libc++_shared.so").exists()
+            //file("libs/jcifs-ng.jar").exists()
+        }
+        //OutputFiles/OutputDirectories
+        List<String> myCmd = new ArrayList<String>()
+        myCmd.add("make")
+        myCmd.add("native_libnativehelper")
+        myCmd.add("native_build_FileCoreLibrary")
+        //myCmd.add("jcifs-ng")
+        commandLine = myCmd
     }
-    //OutputFiles/OutputDirectories
-    List<String> myCmd = new ArrayList<String>()
-    myCmd.add("make")
-    myCmd.add("native_libnativehelper")
-    myCmd.add("native_build_FileCoreLibrary")
-    //myCmd.add("jcifs-ng")
-    commandLine = myCmd
-}
 
-tasks.register('ndkClean', Exec) {
-    workingDir = "../"
-    List<String> myCmd = new ArrayList<String>()
-    myCmd.add("make")
-    myCmd.add("native_clean")
-    //myCmd.add("external_clean_jcifs-ng")
-    commandLine = myCmd
+    tasks.register('ndkClean', Exec) {
+        workingDir = "../"
+        List<String> myCmd = new ArrayList<String>()
+        myCmd.add("make")
+        myCmd.add("native_clean")
+        //myCmd.add("external_clean_jcifs-ng")
+        commandLine = myCmd
+    }
 }
 
 // ensure there is no loggers other than logback
