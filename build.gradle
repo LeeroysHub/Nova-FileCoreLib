@@ -52,7 +52,11 @@ android {
             compileTask -> compileTask.dependsOn ndkBuild
         }
         clean.dependsOn 'ndkClean'
+    } else {
+        println "*** This is a Windows build, I will not attempt to compile FileCore ndk Libraries. ***"
     }
+
+
 
     buildTypes {
         release {
