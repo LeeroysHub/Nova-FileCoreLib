@@ -20,7 +20,7 @@
     <string name="file_info_files">files</string>
     <string name="usbhost_ptp_storage">External camera</string>
     <string name="network_media_servers">DLNA servers</string>
-    <string name="network_shared_folders">SMB folders</string>
+    <string name="network_shared_folders">SMB servers</string>
 
     <!-- LeeroyFlix file manager core -->
 
@@ -71,7 +71,7 @@
     <string name="storage_busy_message">You cannot use the internal storage while it is connected and mounted through USB.</string>
     <string name="ssh_storage">FTP</string>
     <string name="network_storage">Network</string>
-    <string name="external_storage">External</string>
+    <string name="external_storage">Storage and Servers</string>
     <string name="internal_storage">Internal</string>
     <string name="internal_storage_unified">Storage</string>
     <string name="sd_card_storage">SD card</string>
