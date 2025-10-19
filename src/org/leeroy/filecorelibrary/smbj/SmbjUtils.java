@@ -197,8 +197,8 @@ public class SmbjUtils {
             log.error("isSMBjEnabled: mContext is null! Returning false");
             return false;
         }
-        log.trace("isSMBjEnabled={}", PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("pref_smbj", false));
-        return PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("pref_smbj", false);
+        //log.trace("isSMBjEnabled={}", PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("pref_smbj", false));
+        return false; //SMBJ IS BROKEN DONT USE PreferenceManager.getDefaultSharedPreferences(mContext).getBoolean("pref_smbj", false);
     }
 
     /**
