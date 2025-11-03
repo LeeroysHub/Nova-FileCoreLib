@@ -309,7 +309,7 @@ public class SambaDiscovery implements InternalDiscoveryListener {
         mIsAborted = false;
         mWorkgroups.clear(); // reset previous results
 
-        if (!NetworkState.isLocalNetworkConnected(mContext)) {
+        if (!NetworkState.isNetworkConnected(mContext)) {
             log.debug("start: no localNetworkConnected (eth/wifi), do not start discovery!");
             return;
         }
