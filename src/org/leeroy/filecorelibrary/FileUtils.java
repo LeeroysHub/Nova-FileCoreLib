@@ -350,9 +350,9 @@ public class FileUtils {
         if (pathSegments != null && !pathSegments.isEmpty()) {
             log.debug("getShareName: uri={} -> {} -> {}", uri, Arrays.toString(pathSegments.toArray()), pathSegments.get(0));
             return pathSegments.get(0);
-        } else {
+        } else /* {
             log.warn("getShareName: returns null since getPathSegments is null for uri={}", uri);
-        }
+        } */ 
         return null;
     }
 
