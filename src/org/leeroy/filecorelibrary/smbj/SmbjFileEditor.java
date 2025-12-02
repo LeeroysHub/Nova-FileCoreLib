@@ -150,57 +150,40 @@ public class SmbjFileEditor extends FileEditor {
     @Override
     public Boolean delete() throws Exception {
         SmbjUtils utils = requireUtils();
-        try {
-            return utils.withOutOfCreditsRetry(mUri, () -> {
-                DiskShare mDiskShare = utils.getSmbShare(mUri);
-                String mFilePath = getFilePath(mUri);
-                // Try to delete as file first (most common case)
-                try {
-                    mDiskShare.rm(mFilePath);
-                    log.debug("delete: successfully deleted file {}", mUri);
+        return utils.withOutOfCreditsRetry(mUri, () -> {
+            DiskShare mDiskShare = SmbjUtils.peekInstance().getSmbShare(mUri);
+            String mFilePath = getFilePath(mUri);
+            try {
+                mDiskShare.rm(mFilePath);
+                log.debug("delete: successfully deleted file {}", mUri);
+                return true;
+            } catch (SMBApiException e) {
+                NtStatus status = e.getStatus();
+                if (status == NtStatus.STATUS_FILE_IS_A_DIRECTORY) {
+                    log.debug("delete: path is a directory, using rmdir {}", mUri);
+                    mDiskShare.rmdir(mFilePath, true);
+                    log.debug("delete: successfully deleted directory {}", mUri);
                     return true;
-                } catch (SMBApiException e) {
-                    NtStatus status = e.getStatus();
-                    // If it's not a file, try as a directory
-                    if (status == NtStatus.STATUS_FILE_IS_A_DIRECTORY) {
-                        log.debug("delete: path is a directory, using rmdir {}", mUri);
-                        mDiskShare.rmdir(mFilePath, true);
-                        log.debug("delete: successfully deleted directory {}", mUri);
-                        return true;
-                    } else if (status == NtStatus.STATUS_OBJECT_NAME_NOT_FOUND) {
-                        // File doesn't exist - this is not an error, just return true
-                        log.debug("delete: file does not exist {}", mUri);
-                        return true;
-                    } else {
-                        throw e;
-                    }
-                } catch (Exception e) {
-                    // Handle smbj quirk: TransportException with EOFException during delete
-                    // The file is typically deleted on server despite the exception, but the
-                    // connection is compromised. Invalidate the cached share to force reconnection.
-                    if (isEofTransportException(e)) {
-                        log.debug("delete: got EOF exception during rm/rmdir, invalidating share cache for {}", mUri);
-                        utils.invalidateShare(mUri);
-                        // File was deleted on server; return true to proceed with next operation
-                        // which will get a fresh, connected share via getSmbShare()
-                        return true;
-                    }
+                } else if (status == NtStatus.STATUS_OBJECT_NAME_NOT_FOUND) {
+                    log.debug("delete: file does not exist {}", mUri);
+                    return true;
+                } else {
                     throw e;
                 }
-            });
-        } catch (Exception e) {
-            Throwable root = e;
-            while (root.getCause() != null) {
-                root = root.getCause();
+            } catch (Exception e) {
+                Throwable root = e;
+                while (root.getCause() != null) {
+                    root = root.getCause();
+                }
+                if (root instanceof EOFException) {
+                    log.debug("delete: EOFException during delete—server likely deleted file anyway {}", mUri);
+                    mDiskShare.close();
+                    return true;
+                }
+                caughtException(e, "SmbjFileEditor:delete", "Unexpected exception in delete " + mUri);
+                throw e;
             }
-            if (root instanceof EOFException) {
-                log.debug("delete: EOFException during delete—server likely deleted file anyway {}", mUri);
-                mDiskShare.close();
-                return true;
-            }
-            caughtException(e, "SmbjFileEditor:delete", "Unexpected exception in delete " + mUri);
-            throw e;
-        }
+        });
     }
 
     @Override
