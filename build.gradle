@@ -85,20 +85,12 @@ if (isLinux) {
     tasks.register('ndkBuild', Exec) {
         workingDir = "../"
 
-        outputs.upToDateWhen {
-            file("libs/arm64-v8a/libc++_shared.so").exists()
-            file("libs/armeabi-v7a/libc++_shared.so").exists()
-            file("libs/x86/libc++_shared.so").exists()
-            file("libs/x86_64/libc++_shared.so").exists()
-            //file("libs/jcifs-ng.jar").exists()
-        }
-        //OutputFiles/OutputDirectories
-        List<String> myCmd = new ArrayList<String>()
-        myCmd.add("make")
-        myCmd.add("native_libnativehelper")
-        myCmd.add("native_build_FileCoreLibrary")
-        //myCmd.add("jcifs-ng")
-        commandLine = myCmd
+    outputs.upToDateWhen {
+        file("libs/arm64-v8a/libfilecoreutils.so").exists()
+        file("libs/armeabi-v7a/libfilecoreutils.so").exists()
+        file("libs/x86/libfilecoreutils.so").exists()
+        file("libs/x86_64/libfilecoreutils.so").exists()
+        //file("libs/jcifs-ng.jar").exists()
     }
 
     tasks.register('ndkClean', Exec) {
