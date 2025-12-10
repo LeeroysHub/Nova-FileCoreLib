@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.environment;
+package org.leeroy.environment;
 
 import android.content.Context;
 import android.util.Log;
@@ -25,8 +25,8 @@ import io.sentry.Breadcrumb;
 import io.sentry.Sentry;
 import io.sentry.SentryLevel;
 
-public final class ArchosUtils {
-    private static final String TAG = "ArchosUtils";
+public final class LeeroyFlixUtils {
+    private static final String TAG = "LeeroyFlixUtils";
     private static final boolean DBG = false;
 
     private static Context globalContext;
@@ -64,7 +64,7 @@ public final class ArchosUtils {
     }
 
     public static void setGlobalContext(Context globalContext) {
-        ArchosUtils.globalContext = globalContext;
+        LeeroyFlixUtils.globalContext = globalContext;
     }
 
     public static Context getGlobalContext() {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/archos_info_common_details"
+    android:id="@+id/leeroyflix_info_common_details"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:paddingLeft="11dip"
@@ -19,7 +19,7 @@
        android:paddingRight="7dip"
        android:text="@string/file_info_label_name" />
     <TextView
-       android:id="@+id/archos_info_name"
+       android:id="@+id/leeroyflix_info_name"
        style="@style/InfoDialogText"/>
   </LinearLayout>
 
@@ -28,7 +28,7 @@
      android:layout_height="wrap_content"
      android:orientation="horizontal" >
     <TextView
-       android:id="@+id/archos_info_size_label"
+       android:id="@+id/leeroyflix_info_size_label"
        style="@style/InfoDialogText.Grey"
        android:paddingRight="7dip"
        android:text="@string/file_info_label_size" />
@@ -37,20 +37,20 @@
        android:layout_height="wrap_content"
        android:orientation="vertical" >
       <TextView
-         android:id="@+id/archos_info_size"
+         android:id="@+id/leeroyflix_info_size"
          style="@style/InfoDialogText"/>
       <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:orientation="horizontal" >
-        <ProgressBar android:id="@+id/archos_info_progress"
+        <ProgressBar android:id="@+id/leeroyflix_info_progress"
                      style="?android:attr/progressBarStyleSmall"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:padding="5dip"
                      android:indeterminate="true" />
         <TextView
-           android:id="@+id/archos_info_number_files"
+           android:id="@+id/leeroyflix_info_number_files"
            style="@style/InfoDialogText"/>
       </LinearLayout>
     </LinearLayout>
@@ -61,7 +61,7 @@
      android:layout_height="wrap_content"
      android:orientation="horizontal" >
     <TextView
-       android:id="@+id/archos_info_size_label_2"
+       android:id="@+id/leeroyflix_info_size_label_2"
        style="@style/InfoDialogText.Grey"
        android:paddingRight="7dip"
        android:text="@string/file_info_label_size" />
@@ -70,20 +70,20 @@
        android:layout_height="wrap_content"
        android:orientation="vertical" >
       <TextView
-         android:id="@+id/archos_info_size_2"
+         android:id="@+id/leeroyflix_info_size_2"
          style="@style/InfoDialogText"/>
       <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:orientation="horizontal" >
-        <ProgressBar android:id="@+id/archos_info_progress_2"
+        <ProgressBar android:id="@+id/leeroyflix_info_progress_2"
                      style="?android:attr/progressBarStyleSmall"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:padding="5dip"
                      android:indeterminate="true" />
         <TextView
-           android:id="@+id/archos_info_number_files_2"
+           android:id="@+id/leeroyflix_info_number_files_2"
            style="@style/InfoDialogText"/>
       </LinearLayout>
     </LinearLayout>
@@ -94,12 +94,12 @@
      android:layout_height="wrap_content"
      android:orientation="horizontal" >
     <TextView
-       android:id="@+id/archos_info_permission_label"
+       android:id="@+id/leeroyflix_info_permission_label"
        style="@style/InfoDialogText.Grey"
        android:paddingRight="7dip"
        android:text="@string/file_info_label_permission" />
     <TextView
-       android:id="@+id/archos_info_permission"
+       android:id="@+id/leeroyflix_info_permission"
        style="@style/InfoDialogText"/>
   </LinearLayout>
 
@@ -108,12 +108,12 @@
      android:layout_height="wrap_content"
      android:orientation="horizontal" >
     <TextView
-       android:id="@+id/archos_info_last_modified_label"
+       android:id="@+id/leeroyflix_info_last_modified_label"
        style="@style/InfoDialogText.Grey"
        android:paddingRight="7dip"
        android:text="@string/file_info_label_last_modified" />
     <TextView
-       android:id="@+id/archos_info_last_modified"
+       android:id="@+id/leeroyflix_info_last_modified"
        style="@style/InfoDialogText"/>
   </LinearLayout>
 
@@ -122,12 +122,12 @@
      android:layout_height="wrap_content"
      android:orientation="horizontal" >
     <TextView
-       android:id="@+id/archos_info_mime_type_label"
+       android:id="@+id/leeroyflix_info_mime_type_label"
        style="@style/InfoDialogText.Grey"
        android:paddingRight="7dip"
        android:text="@string/file_info_label_mime_type" />
     <TextView
-       android:id="@+id/archos_info_mime_type"
+       android:id="@+id/leeroyflix_info_mime_type"
        style="@style/InfoDialogText"/>
   </LinearLayout>
 
@@ -140,7 +140,7 @@
      android:paddingBottom="2dip"
      app:srcCompat="@drawable/divider_horizontal_dark"/>
 
-  <TextView android:id="@+id/archos_info_fullpath"
+  <TextView android:id="@+id/leeroyflix_info_fullpath"
      style="@style/InfoDialogText"
      android:layout_width="fill_parent"
      android:singleLine="false"/> 

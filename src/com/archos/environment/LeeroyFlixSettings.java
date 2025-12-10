@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.environment;
+package org.leeroy.environment;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -20,7 +20,7 @@ import android.provider.Settings;
 /**
  * The Settings provider contains global system-level device preferences.
  */
-public final class ArchosSettings {
+public final class LeeroyFlixSettings {
 
         /**
          * TV Overscan percent : 0..100

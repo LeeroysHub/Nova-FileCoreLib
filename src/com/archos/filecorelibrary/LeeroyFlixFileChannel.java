@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -23,7 +23,7 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.FileChannel;
 
 
-public class ArchosFileChannel {
+public class LeeroyFlixFileChannel {
      /* @Override
     * Returns the current file size, as an integer number of bytes.
     */

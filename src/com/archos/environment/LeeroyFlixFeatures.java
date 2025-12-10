@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.environment;
+package org.leeroy.environment;
 
 import android.app.UiModeManager;
 import android.content.Context;
@@ -20,12 +20,12 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.util.Log;
 
-public final class ArchosFeatures {
+public final class LeeroyFlixFeatures {
 
-    private static final String TAG = "ArchosFeatures";
+    private static final String TAG = "LeeroyFlixFeatures";
     private static final boolean DBG = false;
 
-    // tokeep: sentimental LUDO was Archos TV connect, first Android on TV before AndroidTV in 2012
+    // tokeep: sentimental LUDO was A..os TV connect, first Android on TV before AndroidTV in 2012
     public static boolean isLUDO() {
         if (Build.MODEL.equals("LUDO") || Build.MODEL.equals("A101XS")) return true;
         return false;
