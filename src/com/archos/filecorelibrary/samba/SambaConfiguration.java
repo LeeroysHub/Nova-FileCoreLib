@@ -38,7 +38,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class SambaConfiguration {
 
-	protected static final String configFile = Environment.getExternalStorageDirectory()+"/Android/data/org.leeroy.leeroyflix/files/smb/credentials.conf";
+	protected static final String configFile = Environment.getExternalStorageDirectory()+"/Android/data/org.leeroy.media/files/smb/credentials.conf";
     protected static final String oldConfigFile = Environment.getExternalStorageDirectory()+"/Android/data/org.leeroy.mediaplayer/smb/credentials.conf";
 	static{
 	    checkNewConfigFile();

@@ -460,7 +460,7 @@ public class FileUtils {
     public static void backupDatabase(Context context, String dbFileName) {
         try {
             File sdCard = context.getExternalFilesDir(null);
-            // dump into /sdcard/Android/data/org.leeroy.leeroyflix/files
+            // dump into /sdcard/Android/data/org.leeroy.media/files
             File dataDir = Environment.getDataDirectory();
 
             String packageName = context.getApplicationInfo().packageName;
@@ -489,7 +489,7 @@ public class FileUtils {
     public static void importDatabase(Context context, String dbFileName) {
         try {
             File sdCard = context.getExternalFilesDir(null);
-            // dump into /sdcard/Android/data/org.leeroy.leeroyflix/files
+            // dump into /sdcard/Android/data/org.leeroy.media/files
             File dataDir = Environment.getDataDirectory();
 
             String packageName = context.getApplicationInfo().packageName;

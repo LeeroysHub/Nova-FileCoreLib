@@ -59,7 +59,7 @@ public class FileUtilsQ {
     public static String publicAppDirectory = null;
     public static String privateAppDirectory = null;
 
-    private static final String DEFAULT_PUBLIC_APP_DIR = "/sdcard/Android/data/org.leeroy.leeroyflix/files";
+    private static final String DEFAULT_PUBLIC_APP_DIR = "/sdcard/Android/data/org.leeroy.media/files";
     private static final File DEFAULT_PUBLIC_APP_FILE = new File(DEFAULT_PUBLIC_APP_DIR);
 
     public static void setDeleteLauncher(ActivityResultLauncher<IntentSenderRequest> launcher) {
