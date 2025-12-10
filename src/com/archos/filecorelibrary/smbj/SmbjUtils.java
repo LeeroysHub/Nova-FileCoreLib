@@ -213,6 +213,18 @@ public class SmbjUtils {
             if (smbSession != null) {
                 try {
                     smbShare = (DiskShare) smbSession.connectShare(shareName);
+                    int connectCount = 1;
+                    while (!smbShare.isConnected()) {
+                        smbShare.close();
+                        Connection tmpConnection = smbjConnections.get(cred);
+                        tmpConnection.close(true);
+                        getSmbConnection(uri);
+                        smbSession = smbjSessions.get(cred);
+                        smbShare = (DiskShare) smbSession.connectShare(shareName);
+                        if (connectCount++ > 3) {
+                            throw new IOException("getSmbShare: Cannot reconnect to network share.");
+                        }
+                    }
                     if (log.isTraceEnabled()) log.trace("getSmbShare: saving smbShare {}, smbshare={}", shareName, smbShare);
                     smbjShares.put(cred, smbShare);
                 } catch (SMBRuntimeException e) {
