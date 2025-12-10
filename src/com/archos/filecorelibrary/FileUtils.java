@@ -485,6 +485,35 @@ public class FileUtils {
         }
     }
 
+    // Import database from storage
+    public static void importDatabase(Context context, String dbFileName) {
+        try {
+            File sdCard = context.getExternalFilesDir(null);
+            // dump into /sdcard/Android/data/org.courville.nova/files
+            File dataDir = Environment.getDataDirectory();
+
+            String packageName = context.getApplicationInfo().packageName;
+
+            if (sdCard.canWrite()) {
+                String currentDbPath = String.format("//data//%s//databases//%s",
+                        packageName, dbFileName);
+                String backupDbPath = String.format("%s-%s", packageName, dbFileName);
+                File backupDb = new File(dataDir, currentDbPath);
+                File currentDb = new File(sdCard, backupDbPath);
+
+                if (currentDb.exists()) {
+                    FileChannel src = new FileInputStream(currentDb).getChannel();
+                    FileChannel dst = new FileOutputStream(backupDb).getChannel();
+                    dst.transferFrom(src, 0, src.size());
+                    src.close();
+                    dst.close();
+                }
+            }
+        } catch (Exception e) {
+            throw new Error(e);
+        }
+    }
+    
     // returns permissions listed in the manifest file
     public static String[] getPermissions(Context context) {
         try {
