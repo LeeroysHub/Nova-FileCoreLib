@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.sshj;
+package org.leeroy.filecorelibrary.sshj;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
-import static com.archos.filecorelibrary.FileUtils.getParentDirectoryPath;
-import static com.archos.filecorelibrary.sshj.SshjUtils.getSftpPath;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.FileUtils.getParentDirectoryPath;
+import static org.leeroy.filecorelibrary.sshj.SshjUtils.getSftpPath;
 
 import android.net.Uri;
 
-import com.archos.environment.ObservableInputStream;
-import com.archos.environment.ObservableOutputStream;
-import com.archos.filecorelibrary.AuthenticationException;
-import com.archos.filecorelibrary.FileEditor;
+import org.leeroy.environment.ObservableInputStream;
+import org.leeroy.environment.ObservableOutputStream;
+import org.leeroy.filecorelibrary.AuthenticationException;
+import org.leeroy.filecorelibrary.FileEditor;
 
 import net.schmizz.sshj.common.SSHException;
 import net.schmizz.sshj.sftp.FileAttributes;

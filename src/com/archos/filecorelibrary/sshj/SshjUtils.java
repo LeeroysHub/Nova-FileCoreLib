@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.sshj;
+package org.leeroy.filecorelibrary.sshj;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
-import static com.archos.filecorelibrary.FileUtils.encodeUri;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.FileUtils.encodeUri;
 
 import android.content.Context;
 import android.net.Uri;
 
 import androidx.preference.PreferenceManager;
 
-import com.archos.filecorelibrary.AuthenticationException;
-import com.archos.filecorelibrary.samba.NetworkCredentialsDatabase;
+import org.leeroy.filecorelibrary.AuthenticationException;
+import org.leeroy.filecorelibrary.samba.NetworkCredentialsDatabase;
 
 import net.schmizz.sshj.AndroidConfig;
 import net.schmizz.sshj.DefaultConfig;
@@ -94,7 +94,7 @@ public class SshjUtils {
             }
             return sshClient;
         } catch (UserAuthException uae) {
-            // E/com.archos.filecorelibrary.FileUtils: SshjListingEngine:SshjListingThread: caught IOException (2131886387) for sshj://192.168.234.14:22/volume1/video/
+            // E/org.leeroy.filecorelibrary.FileUtils: SshjListingEngine:SshjListingThread: caught IOException (2131886387) for sshj://192.168.234.14:22/volume1/video/
             //    net.schmizz.sshj.userauth.UserAuthException: Exhausted available authentication methods
             caughtException(uae, "SshjUtils:getSshClient", "UserAuthException, throwing AuthenticationException");
             throw new AuthenticationException();

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.jcifs;
+package org.leeroy.filecorelibrary.jcifs;
 
-import static com.archos.filecorelibrary.samba.SambaDiscovery.dumpShareNameResolver;
-import static com.archos.filecorelibrary.samba.SambaDiscovery.getIpFromShareName;
+import static org.leeroy.filecorelibrary.samba.SambaDiscovery.dumpShareNameResolver;
+import static org.leeroy.filecorelibrary.samba.SambaDiscovery.getIpFromShareName;
 
 import android.net.Uri;
 

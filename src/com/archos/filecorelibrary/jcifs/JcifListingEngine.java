@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 // Copyright 2019 Courville Software
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +13,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.jcifs;
+package org.leeroy.filecorelibrary.jcifs;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileComparator;
-import com.archos.filecorelibrary.ListingEngine;
+import org.leeroy.filecorelibrary.FileComparator;
+import org.leeroy.filecorelibrary.ListingEngine;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +35,7 @@ import jcifs.smb.SmbException;
 import jcifs.smb.SmbFile;
 import jcifs.smb.SmbFileFilter;
 
-import static com.archos.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
+import static org.leeroy.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
 
 /**
  * This class handles the threading of the Jcifs (Samba) file listing

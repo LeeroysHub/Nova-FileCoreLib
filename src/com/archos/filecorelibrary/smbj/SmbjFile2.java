@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.smbj;
+package org.leeroy.filecorelibrary.smbj;
 
-import static com.archos.filecorelibrary.FileUtils.encodeUri;
-import static com.archos.filecorelibrary.FileUtils.getFilePath;
-import static com.archos.filecorelibrary.FileUtils.getShareName;
+import static org.leeroy.filecorelibrary.FileUtils.encodeUri;
+import static org.leeroy.filecorelibrary.FileUtils.getFilePath;
+import static org.leeroy.filecorelibrary.FileUtils.getShareName;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileEditor;
-import com.archos.filecorelibrary.FileUtils;
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.filecorelibrary.RawLister;
+import org.leeroy.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.FileUtils;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.filecorelibrary.RawLister;
 import com.hierynomus.msdtyp.AccessMask;
 import com.hierynomus.msfscc.FileAttributes;
 import com.hierynomus.msfscc.fileinformation.FileAllInformation;

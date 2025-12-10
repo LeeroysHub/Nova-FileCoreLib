@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.webdav;
+package org.leeroy.filecorelibrary.webdav;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.samba.NetworkCredentialsDatabase;
+import org.leeroy.filecorelibrary.samba.NetworkCredentialsDatabase;
 
 import com.thegrizzlylabs.sardineandroid.impl.OkHttpSardine;
 

@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.webdav;
+package org.leeroy.filecorelibrary.webdav;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileEditor;
-import com.archos.filecorelibrary.FileUtils;
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.filecorelibrary.RawLister;
+import org.leeroy.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.FileUtils;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.filecorelibrary.RawLister;
 import com.thegrizzlylabs.sardineandroid.DavAce;
 import com.thegrizzlylabs.sardineandroid.DavResource;
 

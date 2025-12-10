@@ -1,4 +1,4 @@
-package com.archos.filecorelibrary.samba;
+package org.leeroy.filecorelibrary.samba;
 
 import android.content.Context;
 import android.net.nsd.NsdManager;

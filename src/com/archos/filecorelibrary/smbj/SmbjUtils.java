@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.smbj;
+package org.leeroy.filecorelibrary.smbj;
 
-import static com.archos.filecorelibrary.FileUtils.getShareName;
+import static org.leeroy.filecorelibrary.FileUtils.getShareName;
 
 import android.content.Context;
 import android.net.Uri;
 
 import androidx.preference.PreferenceManager;
 
-import com.archos.filecorelibrary.jcifs.JcifsUtils;
-import com.archos.filecorelibrary.samba.NetworkCredentialsDatabase;
-import com.archos.filecorelibrary.samba.SambaDiscovery;
+import org.leeroy.filecorelibrary.jcifs.JcifsUtils;
+import org.leeroy.filecorelibrary.samba.NetworkCredentialsDatabase;
+import org.leeroy.filecorelibrary.samba.SambaDiscovery;
 
 import com.hierynomus.msfscc.FileAttributes;
 import com.hierynomus.msfscc.fileinformation.FileIdBothDirectoryInformation;

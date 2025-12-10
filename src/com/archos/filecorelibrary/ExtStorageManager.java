@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.content.Context;
 import android.os.Build;
@@ -21,7 +21,7 @@ import android.os.IBinder;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
 
-import com.archos.environment.ArchosUtils;
+import org.leeroy.environment.LeeroyFlixUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -198,7 +198,7 @@ public class ExtStorageManager {
 
             Object mountService = asInterface.invoke(Stub, getService.invoke(ServiceManager, params));
 
-            Context context = ArchosUtils.getGlobalContext();
+            Context context = LeeroyFlixUtils.getGlobalContext();
             StorageManager storageManager = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) { // >=4.2 StorageVolume returned from getVolumeList
                 // retrieve StorageVolume[]

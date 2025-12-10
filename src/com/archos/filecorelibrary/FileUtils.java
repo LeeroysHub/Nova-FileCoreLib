@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +28,7 @@ import android.provider.Settings;
 
 import androidx.core.content.ContextCompat;
 
-import com.archos.filecorelibrary.contentstorage.DocumentUriBuilder;
+import org.leeroy.filecorelibrary.contentstorage.DocumentUriBuilder;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -460,7 +460,7 @@ public class FileUtils {
     public static void backupDatabase(Context context, String dbFileName) {
         try {
             File sdCard = context.getExternalFilesDir(null);
-            // dump into /sdcard/Android/data/org.courville.nova/files
+            // dump into /sdcard/Android/data/org.leeroy.leeroyflix/files
             File dataDir = Environment.getDataDirectory();
 
             String packageName = context.getApplicationInfo().packageName;
@@ -489,7 +489,7 @@ public class FileUtils {
     public static void importDatabase(Context context, String dbFileName) {
         try {
             File sdCard = context.getExternalFilesDir(null);
-            // dump into /sdcard/Android/data/org.courville.nova/files
+            // dump into /sdcard/Android/data/org.leeroy.leeroyflix/files
             File dataDir = Environment.getDataDirectory();
 
             String packageName = context.getApplicationInfo().packageName;

@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.localstorage;
+package org.leeroy.filecorelibrary.localstorage;
 
-import static com.archos.filecorelibrary.FileUtils.canManageExternalStorage;
-import static com.archos.filecorelibrary.FileUtils.prefixPublicNfoPosterUri;
+import static org.leeroy.filecorelibrary.FileUtils.canManageExternalStorage;
+import static org.leeroy.filecorelibrary.FileUtils.prefixPublicNfoPosterUri;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,12 +25,12 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 
-import com.archos.filecorelibrary.ExtStorageManager;
-import com.archos.filecorelibrary.FileEditor;
-import com.archos.filecorelibrary.FileUtils;
-import com.archos.filecorelibrary.FileUtilsQ;
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.environment.ArchosUtils;
+import org.leeroy.filecorelibrary.ExtStorageManager;
+import org.leeroy.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.FileUtils;
+import org.leeroy.filecorelibrary.FileUtilsQ;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.environment.LeeroyFlixUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -144,7 +144,7 @@ public class LocalStorageFileEditor extends FileEditor {
             toIndex = Uri.parse("file://" + toIndex.toString());
         }
         Intent scanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        scanIntent.setPackage(ArchosUtils.getGlobalContext().getPackageName());
+        scanIntent.setPackage(LeeroyFlixUtils.getGlobalContext().getPackageName());
         scanIntent.setData(toIndex);
         mContext.sendBroadcast(scanIntent);
     }

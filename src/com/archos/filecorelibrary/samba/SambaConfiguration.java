@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.samba;
+package org.leeroy.filecorelibrary.samba;
 
 import android.os.Environment;
 import android.util.Base64;
 
-import com.archos.filecorelibrary.IOUtils;
+import org.leeroy.filecorelibrary.IOUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -38,8 +38,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class SambaConfiguration {
 
-	protected static final String configFile = Environment.getExternalStorageDirectory()+"/Android/data/org.courville.nova/files/smb/credentials.conf";
-    protected static final String oldConfigFile = Environment.getExternalStorageDirectory()+"/Android/data/com.archos.mediacenter/smb/credentials.conf";
+	protected static final String configFile = Environment.getExternalStorageDirectory()+"/Android/data/org.leeroy.leeroyflix/files/smb/credentials.conf";
+    protected static final String oldConfigFile = Environment.getExternalStorageDirectory()+"/Android/data/org.leeroy.mediaplayer/smb/credentials.conf";
 	static{
 	    checkNewConfigFile();
 	}

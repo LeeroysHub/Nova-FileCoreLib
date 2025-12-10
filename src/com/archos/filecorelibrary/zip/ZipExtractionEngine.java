@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.zip;
+package org.leeroy.filecorelibrary.zip;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.archos.filecorelibrary.CopyCutEngine;
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.filecorelibrary.OperationEngineListener;
+import org.leeroy.filecorelibrary.CopyCutEngine;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.filecorelibrary.OperationEngineListener;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.webdav;
+package org.leeroy.filecorelibrary.webdav;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
 
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileEditor;
-import com.archos.filecorelibrary.FileUtils;
+import org.leeroy.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.FileUtils;
 import com.thegrizzlylabs.sardineandroid.impl.OkHttpSardine;
 import com.thegrizzlylabs.sardineandroid.impl.SardineException;
 

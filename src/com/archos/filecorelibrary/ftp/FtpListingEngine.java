@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.ftp;
+package org.leeroy.filecorelibrary.ftp;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileComparator;
-import com.archos.filecorelibrary.ListingEngine;
+import org.leeroy.filecorelibrary.FileComparator;
+import org.leeroy.filecorelibrary.ListingEngine;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.archos.filecorelibrary.AuthenticationException;
+import org.leeroy.filecorelibrary.AuthenticationException;
 
 /**
  * This class handles the threading of the FTP file listing

@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.samba;
+package org.leeroy.filecorelibrary.samba;
 
 import java.math.BigInteger;
 import java.net.Inet4Address;
@@ -52,10 +52,10 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import com.archos.environment.ArchosFeatures;
-import com.archos.environment.ArchosUtils;
-import com.archos.environment.NetworkState;
-import com.archos.filecorelibrary.jcifs.JcifsFileEditor;
+import org.leeroy.environment.LeeroyFlixFeatures;
+import org.leeroy.environment.LeeroyFlixUtils;
+import org.leeroy.environment.NetworkState;
+import org.leeroy.filecorelibrary.jcifs.JcifsFileEditor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -262,7 +262,7 @@ public class SambaDiscovery implements InternalDiscoveryListener {
     }
 
     public SambaDiscovery() {
-        this(ArchosUtils.getGlobalContext());
+        this(LeeroyFlixUtils.getGlobalContext());
     }
 
     public SambaDiscovery(Context context) {
@@ -530,7 +530,7 @@ public class SambaDiscovery implements InternalDiscoveryListener {
     }
 
     private String initIpAddress() {
-        if (ArchosFeatures.isChromeOS(mContext))
+        if (LeeroyFlixFeatures.isChromeOS(mContext))
             return getDoubleNatIpAddress();
 
         ConnectivityManager connMgr = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.ftp;
+package org.leeroy.filecorelibrary.ftp;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,8 +27,8 @@ import org.apache.commons.net.ftp.FTPSClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.archos.filecorelibrary.AuthenticationException;
-import com.archos.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.AuthenticationException;
+import org.leeroy.filecorelibrary.FileEditor;
 import android.net.Uri;
 
 public class FtpFileEditor extends FileEditor {

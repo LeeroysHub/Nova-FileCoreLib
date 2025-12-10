@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-package com.archos.filecorelibrary.samba;
+package org.leeroy.filecorelibrary.samba;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,7 +32,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.archos.filecorelibrary.R;
+import org.leeroy.filecorelibrary.R;
 
 public class SharedPasswordRequest extends AppCompatActivity implements OnClickListener {
 

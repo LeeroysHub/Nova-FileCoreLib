@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,20 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.contentstorage.ContentProviderListingEngine;
-import com.archos.filecorelibrary.ftp.FtpListingEngine;
-import com.archos.filecorelibrary.jcifs.JcifListingEngine;
-import com.archos.filecorelibrary.localstorage.LocalStorageListingEngine;
-import com.archos.filecorelibrary.sftp.SFtpListingEngine;
-import com.archos.filecorelibrary.smbj.SmbjListingEngine;
-import com.archos.filecorelibrary.sshj.SshjListingEngine;
-import com.archos.filecorelibrary.webdav.WebdavListingEngine;
-import com.archos.filecorelibrary.zip.ZipListingEngine;
+import org.leeroy.filecorelibrary.contentstorage.ContentProviderListingEngine;
+import org.leeroy.filecorelibrary.ftp.FtpListingEngine;
+import org.leeroy.filecorelibrary.jcifs.JcifListingEngine;
+import org.leeroy.filecorelibrary.localstorage.LocalStorageListingEngine;
+import org.leeroy.filecorelibrary.sftp.SFtpListingEngine;
+import org.leeroy.filecorelibrary.smbj.SmbjListingEngine;
+import org.leeroy.filecorelibrary.sshj.SshjListingEngine;
+import org.leeroy.filecorelibrary.webdav.WebdavListingEngine;
+import org.leeroy.filecorelibrary.zip.ZipListingEngine;
 
 public class ListingEngineFactory {
     public static ListingEngine getListingEngineForUrl(Context context, Uri uri) {

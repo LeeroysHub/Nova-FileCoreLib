@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.webdav;
+package org.leeroy.filecorelibrary.webdav;
 
 import android.net.Uri;
 
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.filecorelibrary.RawLister;
-import com.archos.filecorelibrary.AuthenticationException;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.filecorelibrary.RawLister;
+import org.leeroy.filecorelibrary.AuthenticationException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

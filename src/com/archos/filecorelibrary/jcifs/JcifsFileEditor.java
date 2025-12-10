@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 // Copyright 2019 Courville Software
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.jcifs;
+package org.leeroy.filecorelibrary.jcifs;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +26,7 @@ import jcifs.smb.SmbFile;
 import jcifs.smb.SmbFileInputStream;
 import jcifs.smb.SmbFileOutputStream;
 
-import com.archos.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.FileEditor;
 
 import android.net.Uri;
 import android.util.Log;
@@ -34,8 +34,8 @@ import android.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
-import static com.archos.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
 
 public class JcifsFileEditor extends FileEditor{
 

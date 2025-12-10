@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.smbj;
+package org.leeroy.filecorelibrary.smbj;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
-import static com.archos.filecorelibrary.FileUtils.getFilePath;
-import static com.archos.filecorelibrary.FileUtils.getParentDirectoryPath;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.FileUtils.getFilePath;
+import static org.leeroy.filecorelibrary.FileUtils.getParentDirectoryPath;
 
 import android.net.Uri;
 
-import com.archos.environment.ObservableInputStream;
-import com.archos.environment.ObservableOutputStream;
-import com.archos.filecorelibrary.FileEditor;
+import org.leeroy.environment.ObservableInputStream;
+import org.leeroy.environment.ObservableOutputStream;
+import org.leeroy.filecorelibrary.FileEditor;
 import com.hierynomus.msdtyp.AccessMask;
 import com.hierynomus.mserref.NtStatus;
 import com.hierynomus.msfscc.FileAttributes;
@@ -37,6 +37,7 @@ import com.hierynomus.smbj.share.File;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;

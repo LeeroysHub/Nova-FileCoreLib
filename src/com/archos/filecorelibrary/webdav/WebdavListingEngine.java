@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.webdav;
+package org.leeroy.filecorelibrary.webdav;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.FileComparator;
-import com.archos.filecorelibrary.ListingEngine;
+import org.leeroy.filecorelibrary.FileComparator;
+import org.leeroy.filecorelibrary.ListingEngine;
 import com.thegrizzlylabs.sardineandroid.DavResource;
 
 import org.slf4j.Logger;

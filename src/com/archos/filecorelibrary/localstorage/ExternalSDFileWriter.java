@@ -1,4 +1,4 @@
-package com.archos.filecorelibrary.localstorage;
+package org.leeroy.filecorelibrary.localstorage;
 
     /*
  * Copyright (C) 2014 NextApp, Inc.

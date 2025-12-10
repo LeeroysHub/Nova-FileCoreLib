@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.contentstorage;
+package org.leeroy.filecorelibrary.contentstorage;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,9 +25,9 @@ import android.provider.OpenableColumns;
 import androidx.documentfile.provider.DocumentFile;
 import androidx.core.util.Pair;
 
-import com.archos.environment.ArchosUtils;
-import com.archos.filecorelibrary.ExtStorageManager;
-import com.archos.filecorelibrary.FileUtils;
+import org.leeroy.environment.LeeroyFlixUtils;
+import org.leeroy.filecorelibrary.ExtStorageManager;
+import org.leeroy.filecorelibrary.FileUtils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -151,7 +151,7 @@ public class DocumentUriBuilder {
         String filename=pair.second;
         String parentUri =pair.first;
         try {
-            DocumentFile parent = getDocumentFileForUri(ArchosUtils.getGlobalContext(), Uri.parse(parentUri));
+            DocumentFile parent = getDocumentFileForUri(LeeroyFlixUtils.getGlobalContext(), Uri.parse(parentUri));
             return new Pair<>(parent, filename);
         }
         catch(IllegalArgumentException e){
@@ -167,11 +167,11 @@ public class DocumentUriBuilder {
                 return child;
             }
         }
-        return getDocumentFileForUri(ArchosUtils.getGlobalContext(), uri);
+        return getDocumentFileForUri(LeeroyFlixUtils.getGlobalContext(), uri);
     }
 
     public static String getNameFromContentProvider(Uri uri){
-        Cursor c= ArchosUtils.getGlobalContext().getContentResolver().query(uri, new String[]{OpenableColumns.DISPLAY_NAME},null,null, null);
+        Cursor c= LeeroyFlixUtils.getGlobalContext().getContentResolver().query(uri, new String[]{OpenableColumns.DISPLAY_NAME},null,null, null);
         if(c!=null&&c.getCount()>0&&c.getColumnIndex(OpenableColumns.DISPLAY_NAME)>=0){
             c.moveToFirst();
             return c.getString(  c.getColumnIndex(OpenableColumns.DISPLAY_NAME));
@@ -180,7 +180,7 @@ public class DocumentUriBuilder {
     }
 
     public static String getTypeFromContentProvider(Uri uri){
-        return ArchosUtils.getGlobalContext().getContentResolver().getType(uri);
+        return LeeroyFlixUtils.getGlobalContext().getContentResolver().getType(uri);
 
     }
 }

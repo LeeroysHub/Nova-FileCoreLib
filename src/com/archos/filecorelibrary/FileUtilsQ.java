@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.app.PendingIntent;
 import android.app.RecoverableSecurityException;
@@ -59,7 +59,7 @@ public class FileUtilsQ {
     public static String publicAppDirectory = null;
     public static String privateAppDirectory = null;
 
-    private static final String DEFAULT_PUBLIC_APP_DIR = "/sdcard/Android/data/org.courville.nova/files";
+    private static final String DEFAULT_PUBLIC_APP_DIR = "/sdcard/Android/data/org.leeroy.leeroyflix/files";
     private static final File DEFAULT_PUBLIC_APP_FILE = new File(DEFAULT_PUBLIC_APP_DIR);
 
     public static void setDeleteLauncher(ActivityResultLauncher<IntentSenderRequest> launcher) {

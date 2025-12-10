@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -27,23 +27,23 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 
-import com.archos.environment.ArchosUtils;
+import org.leeroy.environment.LeeroyFlixUtils;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.archos.filecorelibrary.FileUtils.intentToString;
+import static org.leeroy.filecorelibrary.FileUtils.intentToString;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ExtStorageReceiver extends BroadcastReceiver {
     private static final Logger log = LoggerFactory.getLogger(ExtStorageReceiver.class);
-    public static final String ACTION_MEDIA_MOUNTED  = "com.archos.action.MEDIA_MOUNTED";
-    public static final String ACTION_MEDIA_UNMOUNTED = "com.archos.action.MEDIA_UNMOUNTED";
+    public static final String ACTION_MEDIA_MOUNTED  = "org.leeroy.action.MEDIA_MOUNTED";
+    public static final String ACTION_MEDIA_UNMOUNTED = "org.leeroy.action.MEDIA_UNMOUNTED";
     public static final String VALUE_PATH_NONE = "none";
-    public static final String ARCHOS_FILE_SCHEME = "archosfile";
-    public static final String ACTION_MEDIA_CHANGED = "com.archos.action.MEDIA_CHANGED";
+    public static final String LEEROYFLIX_FILE_SCHEME = "leeroyflixfile";
+    public static final String ACTION_MEDIA_CHANGED = "org.leeroy.action.MEDIA_CHANGED";
     private static final int WAIT_FOR_MOUNT_MS = 3000;
 
     static final List<String> mediaActions = Arrays.asList(Intent.ACTION_MEDIA_MOUNTED, Intent.ACTION_MEDIA_UNMOUNTED,
@@ -91,7 +91,7 @@ public class ExtStorageReceiver extends BroadcastReceiver {
                     if (uri != null) {
                         path = uri.substring(7);
                         //file:// will throw exception from android N
-                        if (uri.startsWith("file://")) uri = ARCHOS_FILE_SCHEME + "://" + path;
+                        if (uri.startsWith("file://")) uri = LEEROYFLIX_FILE_SCHEME + "://" + path;
                         if (log.isDebugEnabled()) log.debug("onReceive: uri is {}", uri);
                     } else {
                         log.warn("onReceive: uri is null for action {}!", action);
@@ -103,7 +103,7 @@ public class ExtStorageReceiver extends BroadcastReceiver {
                         if (log.isDebugEnabled()) log.debug("onReceive: media mounted {}", uri);
                         //StorageVolume volume = (StorageVolume) intent.getParcelableExtra(StorageVolume.EXTRA_STORAGE_VOLUME);
                         intentManager = new Intent(ACTION_MEDIA_MOUNTED, Uri.parse(uri));
-                        intentManager.setPackage(ArchosUtils.getGlobalContext().getPackageName());
+                        intentManager.setPackage(LeeroyFlixUtils.getGlobalContext().getPackageName());
                         mContext.sendBroadcast(intentManager);
                         break;
                     case Intent.ACTION_MEDIA_UNMOUNTED:
@@ -112,7 +112,7 @@ public class ExtStorageReceiver extends BroadcastReceiver {
                         if (log.isDebugEnabled()) log.debug("onReceive: media removed {}", uri);
                         if (path == null || path.isEmpty()) return;
                         intentManager = new Intent(ACTION_MEDIA_UNMOUNTED, Uri.parse(uri));
-                        intentManager.setPackage(ArchosUtils.getGlobalContext().getPackageName());
+                        intentManager.setPackage(LeeroyFlixUtils.getGlobalContext().getPackageName());
                         mContext.sendBroadcast(intentManager);
                         break;
                     // more clever stuff could be done when detecting USB device attached but for now we only throw logs
@@ -132,8 +132,8 @@ public class ExtStorageReceiver extends BroadcastReceiver {
                                 }
                             }
                             if (isMassStorage) {
-                                intentManager = new Intent(ACTION_MEDIA_MOUNTED, Uri.parse(ARCHOS_FILE_SCHEME + "://none"));
-                                intentManager.setPackage(ArchosUtils.getGlobalContext().getPackageName());
+                                intentManager = new Intent(ACTION_MEDIA_MOUNTED, Uri.parse(LEEROYFLIX_FILE_SCHEME + "://none"));
+                                intentManager.setPackage(LeeroyFlixUtils.getGlobalContext().getPackageName());
                                 //SystemClock.sleep(WAIT_FOR_MOUNT_MS); // wait in order to get the device mounted (for sdcard on pixel you do not get MEDIA_MOUNTED intent)
                                 mContext.sendBroadcast(intentManager);
                             }
@@ -153,8 +153,8 @@ public class ExtStorageReceiver extends BroadcastReceiver {
                                 }
                             }
                             if (isMassStorage) {
-                                intentManager = new Intent(ACTION_MEDIA_UNMOUNTED, Uri.parse(ARCHOS_FILE_SCHEME + "://none"));
-                                intentManager.setPackage(ArchosUtils.getGlobalContext().getPackageName());
+                                intentManager = new Intent(ACTION_MEDIA_UNMOUNTED, Uri.parse(LEEROYFLIX_FILE_SCHEME + "://none"));
+                                intentManager.setPackage(LeeroyFlixUtils.getGlobalContext().getPackageName());
                                 mContext.sendBroadcast(intentManager);
                             }
                         }

@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
 
 import android.net.Uri;
 
-import com.archos.environment.ArchosUtils;
-import com.archos.filecorelibrary.contentstorage.ContentStorageFileEditor;
+import org.leeroy.environment.LeeroyFlixUtils;
+import org.leeroy.filecorelibrary.contentstorage.ContentStorageFileEditor;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
 
@@ -320,7 +320,7 @@ public class StreamOverHttp {
 					if(metaFile2.length()!=0)
 						length = metaFile2.length();
 					try {
-						var fe = FileEditorFactory.getFileEditorForUrl(mUri, ArchosUtils.getGlobalContext());
+						var fe = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext());
 						is = fe.getInputStream(startFrom);
 						var l = fe.length();
 						if (log.isTraceEnabled()) log.trace("HttpSession:openInputStream: got length {}", l);
@@ -328,21 +328,21 @@ public class StreamOverHttp {
 					 } catch (IOException ioexception) {
 						if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
 						if (ioexception.getMessage().equals("Illegal seek")){
-							is = FileEditorFactory.getFileEditorForUrl(mUri, ArchosUtils.getGlobalContext()).getInputStream();
+							is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream();
 							canSeek = false;
 						}
 					}
 				}else {
 					if (isAskingPoster && isResourcePoster(mPosterLocalUri)) {
 						//special case, inputstream on resource
-						is = ArchosUtils.getGlobalContext().getResources().openRawResource(mPosterGenericResource);
+						is = LeeroyFlixUtils.getGlobalContext().getResources().openRawResource(mPosterGenericResource);
 					} else {
 						try {
-							is = FileEditorFactory.getFileEditorForUrl(mUri, ArchosUtils.getGlobalContext()).getInputStream(startFrom);
+							is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream(startFrom);
 						} catch (IOException ioexception) {
 							if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
 							if (ioexception.getMessage().equals("Illegal seek")){
-								is = FileEditorFactory.getFileEditorForUrl(mUri, ArchosUtils.getGlobalContext()).getInputStream();
+								is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream();
 								canSeek = false;
 							}
 						}
@@ -352,7 +352,7 @@ public class StreamOverHttp {
 				if(length==0)
 					length = is.available();
 				if(length == 0 && "content".equalsIgnoreCase(mUri.getScheme()))
-					length = ((ContentStorageFileEditor)FileEditorFactory.getFileEditorForUrl(mUri, ArchosUtils.getGlobalContext())).getSize();
+					length = ((ContentStorageFileEditor)FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext())).getSize();
 
 			} catch (Exception e) {
 				caughtException(e, "StreamOverHttp:openInputStream", "Exception");

@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,26 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
-import static com.archos.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
-import static com.archos.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
+import static org.leeroy.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
+import static org.leeroy.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
 
 import android.net.Uri;
 
-import com.archos.filecorelibrary.contentstorage.ContentStorageRawLister;
-import com.archos.filecorelibrary.ftp.FTPRawLister;
-import com.archos.filecorelibrary.jcifs.JcifsFile2;
-import com.archos.filecorelibrary.jcifs.JcifsRawLister;
-import com.archos.filecorelibrary.localstorage.LocalStorageRawLister;
-import com.archos.filecorelibrary.sftp.SFTPFile2;
-import com.archos.filecorelibrary.sftp.SFTPRawLister;
-import com.archos.filecorelibrary.smbj.SmbjFile2;
-import com.archos.filecorelibrary.sshj.SshjFile2;
-import com.archos.filecorelibrary.sshj.SshjRawLister;
-import com.archos.filecorelibrary.webdav.WebdavRawLister;
-import com.archos.filecorelibrary.smbj.SmbjRawLister;
-import com.archos.filecorelibrary.zip.ZipRawLister;
+import org.leeroy.filecorelibrary.contentstorage.ContentStorageRawLister;
+import org.leeroy.filecorelibrary.ftp.FTPRawLister;
+import org.leeroy.filecorelibrary.jcifs.JcifsFile2;
+import org.leeroy.filecorelibrary.jcifs.JcifsRawLister;
+import org.leeroy.filecorelibrary.localstorage.LocalStorageRawLister;
+import org.leeroy.filecorelibrary.sftp.SFTPFile2;
+import org.leeroy.filecorelibrary.sftp.SFTPRawLister;
+import org.leeroy.filecorelibrary.smbj.SmbjFile2;
+import org.leeroy.filecorelibrary.sshj.SshjFile2;
+import org.leeroy.filecorelibrary.sshj.SshjRawLister;
+import org.leeroy.filecorelibrary.webdav.WebdavRawLister;
+import org.leeroy.filecorelibrary.smbj.SmbjRawLister;
+import org.leeroy.filecorelibrary.zip.ZipRawLister;
 
 public class RawListerFactory {
 

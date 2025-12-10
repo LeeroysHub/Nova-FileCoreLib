@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
 import android.webkit.MimeTypeMap;
 

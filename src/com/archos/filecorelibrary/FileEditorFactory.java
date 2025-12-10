@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
-import static com.archos.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
-import static com.archos.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
+import static org.leeroy.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
+import static org.leeroy.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
 
 import android.content.Context;
 import android.net.Uri;
 
-import com.archos.filecorelibrary.contentstorage.ContentStorageFileEditor;
-import com.archos.filecorelibrary.ftp.FtpFileEditor;
-import com.archos.filecorelibrary.jcifs.JcifsFileEditor;
-import com.archos.filecorelibrary.localstorage.LocalStorageFileEditor;
-import com.archos.filecorelibrary.sftp.SftpFileEditor;
-import com.archos.filecorelibrary.smbj.SmbjFileEditor;
-import com.archos.filecorelibrary.sshj.SshjFileEditor;
-import com.archos.filecorelibrary.zip.ZipFileEditor;
-import com.archos.filecorelibrary.webdav.WebdavFileEditor;
+import org.leeroy.filecorelibrary.contentstorage.ContentStorageFileEditor;
+import org.leeroy.filecorelibrary.ftp.FtpFileEditor;
+import org.leeroy.filecorelibrary.jcifs.JcifsFileEditor;
+import org.leeroy.filecorelibrary.localstorage.LocalStorageFileEditor;
+import org.leeroy.filecorelibrary.sftp.SftpFileEditor;
+import org.leeroy.filecorelibrary.smbj.SmbjFileEditor;
+import org.leeroy.filecorelibrary.sshj.SshjFileEditor;
+import org.leeroy.filecorelibrary.zip.ZipFileEditor;
+import org.leeroy.filecorelibrary.webdav.WebdavFileEditor;
 
 /**
  * create a file editor

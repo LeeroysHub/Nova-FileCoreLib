@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,23 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary;
+package org.leeroy.filecorelibrary;
 
-import static com.archos.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
-import static com.archos.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
+import static org.leeroy.filecorelibrary.smbj.SmbjUtils.isSMBjEnabled;
+import static org.leeroy.filecorelibrary.sshj.SshjUtils.isSSHjEnabled;
 
 import android.net.Uri;
 
-import com.archos.filecorelibrary.contentstorage.ContentFile2;
-import com.archos.filecorelibrary.ftp.FTPFile2;
-import com.archos.filecorelibrary.jcifs.JcifsFile2;
-import com.archos.filecorelibrary.localstorage.JavaFile2;
-import com.archos.filecorelibrary.sftp.SFTPFile2;
-import com.archos.filecorelibrary.sftp.SftpFileEditor;
-import com.archos.filecorelibrary.smbj.SmbjFile2;
-import com.archos.filecorelibrary.sshj.SshjFile2;
-import com.archos.filecorelibrary.sshj.SshjFileEditor;
-import com.archos.filecorelibrary.webdav.WebdavFile2;
+import org.leeroy.filecorelibrary.contentstorage.ContentFile2;
+import org.leeroy.filecorelibrary.ftp.FTPFile2;
+import org.leeroy.filecorelibrary.jcifs.JcifsFile2;
+import org.leeroy.filecorelibrary.localstorage.JavaFile2;
+import org.leeroy.filecorelibrary.sftp.SFTPFile2;
+import org.leeroy.filecorelibrary.sftp.SftpFileEditor;
+import org.leeroy.filecorelibrary.smbj.SmbjFile2;
+import org.leeroy.filecorelibrary.sshj.SshjFile2;
+import org.leeroy.filecorelibrary.sshj.SshjFileEditor;
+import org.leeroy.filecorelibrary.webdav.WebdavFile2;
 
 /**
  * Created by alexandre on 22/04/15.

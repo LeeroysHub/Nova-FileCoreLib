@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.environment;
+package org.leeroy.environment;
 
 import java.io.Closeable;
 import java.io.IOException;

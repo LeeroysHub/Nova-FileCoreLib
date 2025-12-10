@@ -1,4 +1,4 @@
-// Copyright 2017 Archos SA
+// Copyright 2017 LeeroyFlix
 // Copyright 2019 Courville Software
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +13,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.jcifs;
+package org.leeroy.filecorelibrary.jcifs;
 
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import com.archos.filecorelibrary.FileEditor;
-import com.archos.filecorelibrary.MetaFile2;
-import com.archos.filecorelibrary.RawLister;
+import org.leeroy.filecorelibrary.FileEditor;
+import org.leeroy.filecorelibrary.MetaFile2;
+import org.leeroy.filecorelibrary.RawLister;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +33,8 @@ import jcifs.smb.SmbAuthException;
 import jcifs.smb.SmbException;
 import jcifs.smb.SmbFile;
 
-import static com.archos.filecorelibrary.FileUtils.caughtException;
-import static com.archos.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
+import static org.leeroy.filecorelibrary.FileUtils.caughtException;
+import static org.leeroy.filecorelibrary.jcifs.JcifsUtils.getSmbFile;
 
 public class JcifsFile2 extends MetaFile2 {
 

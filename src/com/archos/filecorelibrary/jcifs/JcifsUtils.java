@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.archos.filecorelibrary.jcifs;
+package org.leeroy.filecorelibrary.jcifs;
 
-import static com.archos.filecorelibrary.jcifs.NovaSmbFile.getIpUriString;
+import static org.leeroy.filecorelibrary.jcifs.NovaSmbFile.getIpUriString;
 
 import android.content.Context;
 import android.net.Uri;
 
 import androidx.preference.PreferenceManager;
 
-import com.archos.filecorelibrary.samba.NetworkCredentialsDatabase;
+import org.leeroy.filecorelibrary.samba.NetworkCredentialsDatabase;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
