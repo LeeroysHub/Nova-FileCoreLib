@@ -19,10 +19,10 @@
     <string name="file_info_one_file">1 file</string>
     <string name="file_info_files">files</string>
     <string name="usbhost_ptp_storage">External camera</string>
-    <string name="network_media_servers">Media servers (UPnP)</string>
-    <string name="network_shared_folders">Shared folders (SMB)</string>
+    <string name="network_media_servers">DLNA servers</string>
+    <string name="network_shared_folders">SMB servers</string>
 
-    <!-- Archos file manager core -->
+    <!-- LeeroyFlix file manager core -->
 
     <string name="file_copy_pattern">copy</string>
 
@@ -46,7 +46,7 @@
     <string name="samba_password">Password</string>
     <string name="samba_show_password">Show password</string>
     <string name="samba_wrong_password">Username or password incorrect</string>
-    <string name="preferences">Preferences</string>
+    <string name="preferences">Settings</string>
     <string name="shared_folder_credentials">Passwords</string>
     <string name="no_saved_passwords">No saved passwords</string>
     <!-- WiFi Direct strings-->
@@ -71,7 +71,7 @@
     <string name="storage_busy_message">You cannot use the internal storage while it is connected and mounted through USB.</string>
     <string name="ssh_storage">FTP</string>
     <string name="network_storage">Network</string>
-    <string name="external_storage">External</string>
+    <string name="external_storage">Storage and Servers</string>
     <string name="internal_storage">Internal</string>
     <string name="internal_storage_unified">Storage</string>
     <string name="sd_card_storage">SD card</string>
@@ -289,4 +289,5 @@
 
     <string name="acquire_external_usb_permission">File manager needs special permission to access external storage. Please select your storage on next screen</string>
 
+    <string name="accessibility_description">LeeroyFlix button mapper</string>
 </resources>
