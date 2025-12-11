@@ -194,7 +194,7 @@ public class StreamOverHttp {
 		HttpSession(Socket s, String fileMimeType){
 			this.fileMimeType = fileMimeType;
 			socket = s;
-			if (log.isDebugEnabled()) log.debug("Stream over localhost: serving request on {}", s.getInetAddress());
+			//if (log.isDebugEnabled()) log.debug("Stream over localhost: serving request on {}", s.getInetAddress());
 			Thread t = new Thread(this, "Http response");
 			t.setDaemon(true);
 			t.start();
@@ -323,10 +323,10 @@ public class StreamOverHttp {
 						var fe = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext());
 						is = fe.getInputStream(startFrom);
 						var l = fe.length();
-						if (log.isTraceEnabled()) log.trace("HttpSession:openInputStream: got length {}", l);
+						//if (log.isTraceEnabled()) log.trace("HttpSession:openInputStream: got length {}", l);
 						if (l > 0 && length <=0) length = l;
 					 } catch (IOException ioexception) {
-						if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
+						//if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
 						if (ioexception.getMessage().equals("Illegal seek")){
 							is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream();
 							canSeek = false;
@@ -340,7 +340,7 @@ public class StreamOverHttp {
 						try {
 							is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream(startFrom);
 						} catch (IOException ioexception) {
-							if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
+							//if (log.isDebugEnabled()) log.debug("openInputStream: caught IOException ", ioexception);
 							if (ioexception.getMessage().equals("Illegal seek")){
 								is = FileEditorFactory.getFileEditorForUrl(mUri, LeeroyFlixUtils.getGlobalContext()).getInputStream();
 								canSeek = false;
@@ -404,7 +404,7 @@ public class StreamOverHttp {
 						sendError(socket, HTTP_416, null);
 						return;
 					}
-					if (log.isDebugEnabled()) log.debug("handleResponse : {}", range);
+					//if (log.isDebugEnabled()) log.debug("handleResponse : {}", range);
 					range = range.substring(6); // removes "bytes="
 					long startFrom = 0, endAt = -1;
 					int minus = range.indexOf('-');
@@ -426,7 +426,7 @@ public class StreamOverHttp {
 					if(endAt < 0)
 						endAt = length - 1;
 					sendCount = (endAt - startFrom + 1);
-					if (log.isDebugEnabled()) log.debug("handleResponse: startFrom = {} + endAt={} sendCount={} (length = {})", startFrom, endAt, sendCount, length);
+					//if (log.isDebugEnabled()) log.debug("handleResponse: startFrom = {} + endAt={} sendCount={} (length = {})", startFrom, endAt, sendCount, length);
 					if(sendCount < 0)
 						sendCount = 0;
 					status = "206 Partial Content";
@@ -440,7 +440,7 @@ public class StreamOverHttp {
 				}
 				headers.put("Access-Control-Allow-Origin", "*");
 				sendResponse(socket, status, fileMimeType, headers, is, sendCount, buf, null);
-				if (log.isDebugEnabled()) log.debug("Http stream finished");
+				//if (log.isDebugEnabled()) log.debug("Http stream finished");
 			} catch(IOException ioe) {
 				caughtException(ioe, "StreamOverHttp:handleResponse", "IOException");
 				try{
@@ -484,8 +484,8 @@ public class StreamOverHttp {
 					String line = in.readLine();
 					if(line==null)
 						break;
-					if(log.isDebugEnabled() && line.length()>0)
-						if (log.isDebugEnabled()) log.debug("decodeHeader {}", line);
+					//if(log.isDebugEnabled() && line.length()>0)
+						//if (log.isDebugEnabled()) log.debug("decodeHeader {}", line);
 					int p = line.indexOf(':');
 					if(p<0)
 						continue;
@@ -535,7 +535,7 @@ public class StreamOverHttp {
 	}
 
 	public void close(){
-		if (log.isDebugEnabled()) log.debug("Closing stream over http");
+		//if (log.isDebugEnabled()) log.debug("Closing stream over http");
 		try{
 			serverSocket.close();
 		} catch(Exception e) {
@@ -556,18 +556,18 @@ public class StreamOverHttp {
 	}
 
 	private void copyStream(InputStream in, OutputStream out, byte[] tmpBuf, long maxSize) throws IOException{
-		if (log.isDebugEnabled()) log.debug("copyStream");
+		//if (log.isDebugEnabled()) log.debug("copyStream");
 		int count;
 
 		while(maxSize>0) {
-			if (log.isDebugEnabled()) log.debug("copyStream: looping maxSize= {}", maxSize);
+			//if (log.isDebugEnabled()) log.debug("copyStream: looping maxSize= {}", maxSize);
 			count = (int) Math.min(maxSize, (long)tmpBuf.length);
-			if (log.isDebugEnabled()) log.debug("copyStream: looping count= {}", count);
+			//if (log.isDebugEnabled()) log.debug("copyStream: looping count= {}", count);
 			count = in.read(tmpBuf, 0, count);
-			if (log.isDebugEnabled()) log.debug("copyStream: looping count after in.read {}", count);
+			//if (log.isDebugEnabled()) log.debug("copyStream: looping count after in.read {}", count);
 			if(count<0)
 				break;
-			if (log.isDebugEnabled()) log.debug("copyStream: looping tmpBuf is of length {} writing count {}", tmpBuf.length, count);
+			//if (log.isDebugEnabled()) log.debug("copyStream: looping tmpBuf is of length {} writing count {}", tmpBuf.length, count);
 			out.write(tmpBuf, 0, count); // TODO MARC CRASH HERE
 			out.flush();
 			maxSize -= count;
@@ -577,7 +577,7 @@ public class StreamOverHttp {
 	 * Sends given response to the socket, and closes the socket.
 	 */
 	private void sendResponse(Socket socket, String status, String mimeType, Properties header, InputStream isInput, long sendCount, byte[] buf, String errMsg) throws IOException {
-		if (log.isDebugEnabled()) log.debug("sendResponse");
+		//if (log.isDebugEnabled()) log.debug("sendResponse");
 		BufferedInputStream bin = null;
 		try {
 			OutputStream out = socket.getOutputStream();
@@ -597,7 +597,7 @@ public class StreamOverHttp {
 					String key = (String)e.nextElement();
 					String value = header.getProperty(key);
 					String l = key + ": " + value + "\r\n";
-					if (log.isDebugEnabled()) log.debug("sendResponse : {}", l);
+					//if (log.isDebugEnabled()) log.debug("sendResponse : {}", l);
 					pw.print(l);
 				}
 			}

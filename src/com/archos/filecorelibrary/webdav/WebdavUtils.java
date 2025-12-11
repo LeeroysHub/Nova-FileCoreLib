@@ -66,7 +66,7 @@ public class WebdavUtils {
 
     private WebdavUtils(Context context) {
         mContext = context;
-        if (log.isDebugEnabled()) log.debug("WebdavUtils: initializing contexts");
+        //if (log.isDebugEnabled()) log.debug("WebdavUtils: initializing contexts");
     }
 
     public synchronized OkHttpSardine getSardine(Uri uri) {
@@ -127,10 +127,10 @@ public class WebdavUtils {
         Uri key = buildKeyFromUri(uri);
         String resolved = resolvedRedirects.get(key);
         if (resolved != null) {
-            if (log.isTraceEnabled()) log.trace("resolveRedirect: cache hit for " + key + " -> " + resolved);
+            //if (log.isTraceEnabled()) log.trace("resolveRedirect: cache hit for " + key + " -> " + resolved);
             return resolved;
         }
-        if (log.isTraceEnabled()) log.trace("resolveRedirect: cache miss for " + key);
+        //if (log.isTraceEnabled()) log.trace("resolveRedirect: cache miss for " + key);
 
         String baseUrl = uri.getScheme() + "://" + uri.getHost();
         if (uri.getPort() != -1) {
@@ -150,7 +150,7 @@ public class WebdavUtils {
                                 redirectBase += ":" + redirectUri.getPort();
                             }
                             resolved = redirectBase;
-                            if (log.isDebugEnabled()) log.debug("resolveRedirect: resolved " + key + " to " + resolved);
+                            //if (log.isDebugEnabled()) log.debug("resolveRedirect: resolved " + key + " to " + resolved);
                         } else {
                             log.warn("resolveRedirect: invalid redirect URL format: " + location);
                         }

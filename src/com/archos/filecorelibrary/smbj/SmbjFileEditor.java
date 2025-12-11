@@ -60,7 +60,7 @@ public class SmbjFileEditor extends FileEditor {
 
     @Override
     public InputStream getInputStream() throws Exception {
-        if (log.isTraceEnabled()) log.trace("getInputStream: opening {}", mUri);
+        //if (log.isTraceEnabled()) log.trace("getInputStream: opening {}", mUri);
         SmbjUtils utils = requireUtils();
         return utils.withOutOfCreditsRetry(mUri, () -> {
             File smbjFile = utils.getSmbShare(mUri).openFile(getFilePath(mUri),
@@ -72,7 +72,7 @@ public class SmbjFileEditor extends FileEditor {
             InputStream is = smbjFile.getInputStream();
             ObservableInputStream ois = new ObservableInputStream(is);
             ois.onClose(() -> {if (smbjFile != null) {
-                if (log.isTraceEnabled()) log.trace("getInputStream: closing {}", mUri);
+                //if (log.isTraceEnabled()) log.trace("getInputStream: closing {}", mUri);
                 // check that DiskShare has not already been closed (seen on sentry)
                 if (smbjFile.getDiskShare().isConnected()) smbjFile.closeSilently();
             }});
@@ -82,7 +82,7 @@ public class SmbjFileEditor extends FileEditor {
 
     @Override
     public InputStream getInputStream(long from) throws Exception {
-        if (log.isTraceEnabled()) log.trace("getInputStream: opening {}", mUri);
+        //if (log.isTraceEnabled()) log.trace("getInputStream: opening {}", mUri);
         SmbjUtils utils = requireUtils();
         return utils.withOutOfCreditsRetry(mUri, () -> {
             File smbjFile = utils.getSmbShare(mUri).openFile(getFilePath(mUri),
@@ -95,7 +95,7 @@ public class SmbjFileEditor extends FileEditor {
             is.skip(from);
             ObservableInputStream ois = new ObservableInputStream(is);
             ois.onClose(() -> {if (smbjFile != null) {
-                if (log.isTraceEnabled()) log.trace("getInputStream: closing {}", mUri);
+                //if (log.isTraceEnabled()) log.trace("getInputStream: closing {}", mUri);
                 // check that DiskShare has not already been closed (seen on sentry)
                 if (smbjFile.getDiskShare().isConnected()) smbjFile.closeSilently();
             }});
@@ -105,7 +105,7 @@ public class SmbjFileEditor extends FileEditor {
 
     @Override
     public OutputStream getOutputStream() throws Exception {
-        if (log.isTraceEnabled()) log.trace("getOutputStream: opening {}", mUri);
+        //if (log.isTraceEnabled()) log.trace("getOutputStream: opening {}", mUri);
         SmbjUtils utils = requireUtils();
         return utils.withOutOfCreditsRetry(mUri, () -> {
             File smbjFile =  utils.getSmbShare(mUri).openFile(getFilePath(mUri),
@@ -116,7 +116,7 @@ public class SmbjFileEditor extends FileEditor {
             OutputStream os = smbjFile.getOutputStream();
             ObservableOutputStream oos = new ObservableOutputStream(os);
             oos.onClose(() -> {if (smbjFile != null) {
-                if (log.isTraceEnabled()) log.trace("getOutputStream: closing {}", mUri);
+                //if (log.isTraceEnabled()) log.trace("getOutputStream: closing {}", mUri);
                 // check that DiskShare has not already been closed (seen on sentry)
                 if (smbjFile.getDiskShare().isConnected()) smbjFile.closeSilently();
             }});
@@ -220,7 +220,7 @@ public class SmbjFileEditor extends FileEditor {
                         EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS)
                 );
 
-                if (log.isDebugEnabled()) log.debug("rename: mFilePath={} -> {}{}", mFilePath, getParentDirectoryPath(mFilePath), newName);
+                //if (log.isDebugEnabled()) log.debug("rename: mFilePath={} -> {}{}", mFilePath, getParentDirectoryPath(mFilePath), newName);
                 if (from != null) {
                     from.rename(getParentDirectoryPath(mFilePath) + newName);
                     from.close();
@@ -232,7 +232,7 @@ public class SmbjFileEditor extends FileEditor {
             // Handle smbj quirk: TransportException with EOFException during rename close
             // Same root cause as delete() - the close operation can trigger EOF
             if (isEofTransportException(e)) {
-                if (log.isDebugEnabled()) log.debug("rename: got EOF exception during close, invalidating share cache for {}", mUri);
+                //if (log.isDebugEnabled()) log.debug("rename: got EOF exception during close, invalidating share cache for {}", mUri);
                 requireUtils().invalidateShare(mUri);
                 // File was renamed on server; return true to proceed with next operation
                 return true;
