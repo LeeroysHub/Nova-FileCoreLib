@@ -134,10 +134,13 @@ public class FileUtils {
     }
 
     public static Uri getParentUrl(Uri uri) {
-        if("content".equals(uri.getScheme())){
-            return Uri.parse(DocumentUriBuilder.getParentUriStringAndFileName(uri).first);
-        }
-        return removeLastSegment(uri);
+        if (uri != null) {
+            if ("content".equals(uri.getScheme())) {
+                return Uri.parse(DocumentUriBuilder.getParentUriStringAndFileName(uri).first);
+            }
+            return removeLastSegment(uri);
+        };
+        return null;
     }
 
     public static String removeFileSlashSlash(String url) {  // remove "file://"
